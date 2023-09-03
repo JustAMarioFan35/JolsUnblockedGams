@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Game</title>
+    <title>Handless Millionaire</title>
+    <link rel="icon" href="handlessmillionairefav.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #myiFrame {
+            border: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <iframe
-        width="560"
-        height="315"
-        allow="fullscreen; autoplay; encrypted-media"
-        src="https://games.construct.net/2900/latest"
-        frameborder="0"
-        allowfullscreen="true"
-        msallowfullscreen="true"
-        mozallowfullscreen="true"
-        webkitallowfullscreen="true"
-        allowpaymentrequest="false"
-        referrerpolicy="unsafe-url"
-        sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups"
-        scrolling="no"
-    ></iframe>
+    <iframe id="myiFrame" src="https://games.construct.net/2900/latest" scrolling="no" allowfullscreen></iframe>
 </body>
 </html>
