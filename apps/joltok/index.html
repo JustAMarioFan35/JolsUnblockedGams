@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JolTok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #de5454;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #video-container {
+            position: relative;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        #video-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        #logo {
+            width: 30px; /* Adjust the size as needed */
+            height: 30px; /* Adjust the size as needed */
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video-player" autoplay controls>
+            <source src="videos/video1.mp4" type="video/mp4">
+            <source src="videos/video2.mp4" type="video/mp4">
+            <source src="videos/video3.mp4" type="video/mp4">
+            <source src="videos/video4.mp4" type="video/mp4">
+            <source src="videos/video5.mp4" type="video/mp4">
+            <source src="videos/video6.mp4" type="video/mp4">
+            <source src="videos/video7.mp4" type="video/mp4">
+            <source src="videos/video8.mp4" type="video/mp4">
+            <source src="videos/video9.mov" type="video/mov">
+            <source src="videos/video10.mp4" type="video/mp4">
+            <source src="videos/video11.mp4" type="video/mp4">
+            <source src="videos/video12.mov" type="video/mov">
+            <source src="videos/video13.mp4" type="video/mp4">
+            <source src="videos/video14.mov" type="video/mov">
+            <source src="videos/video15.mov" type="video/mov">
+            <source src="videos/video16.mov" type="video/mov">
+            <source src="videos/video17.mov" type="video/mov">
+            <source src="videos/video18.mov" type="video/mov">
+            <source src="videos/video19.mov" type="video/mov">
+            <source src="videos/video20.mov" type="video/mov">
+            <source src="videos/video21.mov" type="video/mov">
+        </video>
+        <div id="video-info">Video Info</div>
+        <div id="watermark">
+            <img id="logo" src="logo.png" alt="Your Logo">
+            JolTok (Made by Jowi)
+        </div>
+    </div>
+
+    <script>
+        const videoPlayer = document.getElementById('video-player');
+        const videoSources = [
+            'videos/video1.mp4',
+            'videos/video2.mp4',
+            'videos/video3.mp4',
+            'videos/video4.mp4',
+            'videos/video5.mp4',
+            'videos/video6.mp4',
+            'videos/video7.mp4',
+            'videos/video8.mp4',
+            'videos/video7.mp4',
+            'videos/video8.mp4',
+            'videos/video9.mov',
+            'videos/video10.mp4',
+            'videos/video11.mp4',
+            'videos/video12.mov',
+            'videos/video13.mp4',
+            'videos/video14.mov',
+            'videos/video15.mov',
+            'videos/video16.mov',
+            'videos/video17.mov',
+            'videos/video18.mov',
+            'videos/video19.mov',
+            'videos/video20.mov',
+            'videos/video21.mov'
+            // Add more video sources here
+        ];
+
+        let currentVideoIndex = 0;
+
+        videoPlayer.addEventListener('ended', playNextVideo);
+
+        function playNextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+            videoPlayer.src = videoSources[currentVideoIndex];
+            videoPlayer.play();
+        }
+
+        // Load the first video
+        videoPlayer.src = videoSources[currentVideoIndex];
+        videoPlayer.play();
+    </script>
+</body>
+</html>
